@@ -4,7 +4,7 @@ public class Task2 {
 
     public static void main(String[] args) {
 
-        char grade = 'E';
+        char grade = 'B';
 
         switch (grade) {
 
@@ -12,8 +12,6 @@ public class Task2 {
                 System.out.println("Distinction");
                 break;
             case 'B':
-                System.out.println("First class");
-                break;
             case 'C':
                 System.out.println("First class");
                 break;
