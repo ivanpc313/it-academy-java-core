@@ -4,20 +4,19 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        int giftValue = 7000;
-        double tax1;
-        double tax2;
-        double tax3;
+        int giftValue = 25000;
+        double tax;
 
         if (giftValue < 5000) {
-            tax1 = 0;
-            System.out.println("Ваш налог равен - " + tax1 + "р.");
+            tax = 0;
+
         } else if (giftValue >= 5000 && giftValue < 25000) {
-            tax2 = (100 + (giftValue - 5000) * 0.08);
-            System.out.println("Ваш налог составляет - " + tax2 + "р.");
-        } else if (giftValue >= 25000) {
-            tax3 = (1700 + (giftValue - 25000) * 0.1);
-            System.out.println("Сумма вашего налога - " + tax3 + "р.");
+            tax = (100 + (giftValue - 5000) * 0.08);
+
+        } else {
+            tax = (1700 + (giftValue - 25000) * 0.1);
+
         }
+        System.out.println("Ваш налог равен - " + tax + "р.");
     }
 }
