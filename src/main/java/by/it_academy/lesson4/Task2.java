@@ -4,11 +4,13 @@ public class Task2 {
 
     public static void main(String[] args) {
 
-        int[] array = new int[]{4, 2, 7, 3, 6, 1};
+        int[] array = new int[]{4, 2, 7, 0, 6, 1};
 
-        for (int number : array) {
-            String stars = new String(new char[number]).replace('\0', '*');
-            System.out.println(stars);
+        for (int i : array) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
         }
 
     }

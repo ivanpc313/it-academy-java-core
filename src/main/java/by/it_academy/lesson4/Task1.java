@@ -11,7 +11,7 @@ public class Task1 {
         for (int i = 0; i < array.length; i++) {
             sum = sum + array[i];
         }
-        System.out.println("Сумма чисел в массиве = " + sum);
+        System.out.println("The sum of the numbers in the array = " + sum);
 
     }
 }
