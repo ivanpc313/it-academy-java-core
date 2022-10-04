@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
 
         Counter someCounter = new Counter();
-        someCounter.value();
+
         someCounter.increase(56);
-        someCounter.value();
+
         someCounter.decrease(54);
-        someCounter.value();
+        System.out.println(someCounter.value());
     }
 }

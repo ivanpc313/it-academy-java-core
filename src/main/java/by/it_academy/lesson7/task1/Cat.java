@@ -12,7 +12,7 @@ public class Cat extends Animal implements NoiseCapable {
     }
 
     public void purr() {
-        System.out.println(name + " purrs");
+        System.out.println(name() + " purrs");
     }
 
     @Override

@@ -8,21 +8,20 @@ public class Counter {
         this.value = startValue;
     }
 
-    public Counter() {
-        this.value = 0;
-    }
+   public Counter(){
+        this(0);
+   }
 
     public int value() {
-        System.out.println(value);
-        return 0;
+        return value;
     }
 
     public void increase() {
-        this.value = value + 1;
+       increase(1);
     }
 
     public void decrease() {
-        this.value = value - 1;
+        decrease(1);
     }
 
     public void increase(int increaseBy) {
