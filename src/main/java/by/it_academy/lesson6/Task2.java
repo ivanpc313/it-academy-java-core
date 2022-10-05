@@ -6,32 +6,21 @@ public class Task2 {
     public static void main(String[] args) {
 
         String[] list = new String[]{"Ivan,1991", "Pavel,2001", "Kirill,2015", "Alexander,2003"};
-
-        int maxLength = 0;
+        String longestName = "";
         double sum = 0;
-        double average = 0;
-        double counter = 0;
 
         for (String item : list) {
-            String[] numbers = item.split(",");
-            int numbers1 = numbers[0].length();
-            double numbers2 = Integer.parseInt(numbers[1]);
+            String[] nameAndYear = item.split(",");
+            String name = nameAndYear[0];
+            int year = Integer.parseInt(nameAndYear[1]);
 
-            if (maxLength < numbers1) {
-                maxLength = numbers[0].length();
-                counter++;
+            if (longestName.length() < name.length()) {
+                longestName = name;
             }
-            sum += numbers2;
+            sum += year;
         }
-
-        for (String length : list) {
-            String[] numbers = length.split(",");
-            if (maxLength == numbers[0].length()) {
-                System.out.println(numbers[0]);
-            }
-        }
-        average = sum / counter;
-        System.out.println(average);
+        System.out.println(longestName);
+        System.out.println(sum / list.length);
     }
 }
 
