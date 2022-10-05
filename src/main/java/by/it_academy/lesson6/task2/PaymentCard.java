@@ -1,4 +1,4 @@
-package by.it_academy.lesson5.task2;
+package by.it_academy.lesson6.task2;
 
 public class PaymentCard {
 
@@ -31,7 +31,6 @@ public class PaymentCard {
 
     public void addMoney(double amount) {
         if (amount < 0) {
-            this.balance = balance;
             return;
         }
         this.balance = balance + amount;
