@@ -1,4 +1,4 @@
-package by.it_academy.lesson5.task1;
+package by.it_academy.lesson6.task1;
 
 public class Main {
 

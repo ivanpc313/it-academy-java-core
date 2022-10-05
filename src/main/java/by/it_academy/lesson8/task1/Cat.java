@@ -1,4 +1,4 @@
-package by.it_academy.lesson7.task1;
+package by.it_academy.lesson8.task1;
 
 public class Cat extends Animal implements NoiseCapable {
 

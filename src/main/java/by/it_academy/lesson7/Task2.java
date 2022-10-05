@@ -1,6 +1,4 @@
-package by.it_academy.lesson6;
-
-import java.util.Arrays;
+package by.it_academy.lesson7;
 
 public class Task2 {
     public static void main(String[] args) {

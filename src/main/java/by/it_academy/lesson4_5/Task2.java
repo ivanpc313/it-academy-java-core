@@ -1,4 +1,4 @@
-package by.it_academy.lesson4;
+package by.it_academy.lesson4_5;
 
 public class Task2 {
 

@@ -1,4 +1,4 @@
-package by.it_academy.lesson5.task2;
+package by.it_academy.lesson6.task2;
 
 public class Main {
     public static void main(String[] args) {
