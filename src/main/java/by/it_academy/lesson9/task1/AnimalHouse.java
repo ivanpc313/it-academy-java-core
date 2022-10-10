@@ -1,14 +1,15 @@
 package by.it_academy.lesson9.task1;
 
-public class AnimalHouse <T extends Animal> {
+public class AnimalHouse<T extends Animal> {
 
-    private String someAnimal;
+    private T someAnimal;
 
-    public String getSomeAnimal() {
+    public T getAnimal() {
         return someAnimal;
     }
 
-    public void setSomeAnimal(String someAnimal) {
+    public void setAnimal(T someAnimal) {
         this.someAnimal = someAnimal;
     }
+
 }
