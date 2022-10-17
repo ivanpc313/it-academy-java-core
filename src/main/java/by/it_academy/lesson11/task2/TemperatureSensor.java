@@ -8,7 +8,7 @@ public class TemperatureSensor implements Sensor {
 
     @Override
     public boolean isOn() {
-        return false;
+        return isOn;
     }
 
     @Override

@@ -1,12 +1,10 @@
 package by.it_academy.lesson11.task2;
 
-import java.util.concurrent.ThreadLocalRandom;
-
-public class StandartSensor implements Sensor {
+public class StandardSensor implements Sensor {
 
     private final int value;
 
-    public StandartSensor(int value) {
+    public StandardSensor(int value) {
         this.value = value;
     }
 
