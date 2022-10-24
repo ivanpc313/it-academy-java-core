@@ -1,11 +1,10 @@
 package by.it_academy.lesson13.task1;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -15,16 +14,21 @@ public class Main {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter some numbers: ");
         while (in.hasNextInt()) {
-            list.add(in.nextInt());
+            int nextInt = in.nextInt();
+            if (nextInt == -1) {
+                break;
+            }
+            list.add(nextInt);
         }
 
         List<Integer> newList = list.stream()
-                .filter(number -> number >= 1 && number <= 5)
-                .distinct()
-                .sorted(Comparator.reverseOrder())
-                .collect(Collectors.toList());
+            .filter(number -> number >= 1 && number <= 5)
+            .distinct()
+            .sorted(Comparator.reverseOrder())
+            .collect(Collectors.toList());
 
         System.out.println(newList);
     }
+
 }
 
