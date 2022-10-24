@@ -3,21 +3,17 @@ package by.it_academy.lesson12.task2;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
         var scanner = new Scanner(System.in);
         System.out.println("File:");
         var file = scanner.nextLine();
         System.out.println("Enter team name:");
         var team = scanner.nextLine();
-
 
         try (var reader = new BufferedReader(new FileReader(file))) {
             var games = new ArrayList<Game>();
@@ -29,9 +25,9 @@ public class Main {
             int loses = 0;
             for (Game game : games) {
                 if (game.hasTeam(team)) {
-                    if (game.winner().equals(team)){
+                    if (game.winner().equals(team)) {
                         wins++;
-                    }else {
+                    } else {
                         loses++;
                     }
                 }
@@ -46,6 +42,7 @@ public class Main {
     }
 
     private static final class Game {
+
         private final String raw;
 
         private Game(String raw) {
@@ -82,7 +79,9 @@ public class Main {
         private int secondTeamScore() {
             return Integer.parseInt(parts()[3]);
         }
+
     }
+
 }
 
 
