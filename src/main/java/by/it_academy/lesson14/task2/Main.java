@@ -1,4 +1,4 @@
-package by.it_academy.lesson13.task2;
+package by.it_academy.lesson14.task2;
 
 import java.util.Scanner;
 import java.util.stream.IntStream;
