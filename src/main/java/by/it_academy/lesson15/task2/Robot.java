@@ -1,7 +1,6 @@
 package by.it_academy.lesson15.task2;
 
 import java.util.Arrays;
-import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
 public class Robot implements Runnable {
@@ -20,7 +19,7 @@ public class Robot implements Runnable {
 
     @Override
     public void run() {
-        int[] cordinates = new int[]{0, 0};
+        int[] coordinates = new int[]{0, 0};
         Vector vector = new Vector();
         for (int i = 0; i < actions.length(); i++) {
             switch (actions.charAt(i)) {
@@ -34,7 +33,7 @@ public class Robot implements Runnable {
                     break;
                 case 'F':
                     System.out.println(name + " moves");
-                    vector.apply(cordinates);  //как метод apply меняет координаты, если он не принимает цифры
+                    vector.apply(coordinates);  //как метод apply меняет координаты, если он не принимает цифры
                     break;
                 default:
             }
@@ -44,7 +43,7 @@ public class Robot implements Runnable {
                 Thread.currentThread().interrupt();
             }
         }
-        System.out.println(name + " " + Arrays.toString(cordinates));
+        System.out.println(name + " " + Arrays.toString(coordinates));
     }
 
     private static final class Vector { // не понятно как работает класс, если L и R поворачивают робота на 90 градусов одна
@@ -74,5 +73,7 @@ public class Robot implements Runnable {
             cordinates[0] += x;
             cordinates[1] += y;
         }
+
     }
+
 }

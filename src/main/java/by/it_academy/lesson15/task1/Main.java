@@ -2,32 +2,34 @@ package by.it_academy.lesson15.task1;
 
 import java.math.BigInteger;
 import java.text.DecimalFormat;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        System.out.println(new DecimalFormat("0.###E0").format(factorialFast()));
+    }
 
+    public static BigInteger factorialFast() throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newWorkStealingPool();
-
-        for (int i = 0; i <= 100000; i++) {
-            //    BigInteger myFactorial = executorService.submit()
-
-
-        }
-
-        System.out.println(new DecimalFormat(",###").format(streamedParallel(100000)));
-
+        Future<BigInteger> factorialFuture = executorService.submit(() -> factorial(100000));
+        executorService.shutdown();
+        executorService.awaitTermination(10, TimeUnit.MINUTES);
+        return factorialFuture.get();
     }
 
-    public static Object streamedParallel(int n) {
-        ForkJoinPool forkJoinPool = new ForkJoinPool(4);
-
-        if (n < 2) return BigInteger.valueOf(1);
-        return IntStream.rangeClosed(2, n).parallel()
-                .mapToObj(BigInteger::valueOf).reduce(BigInteger::multiply).get();
-
+    private static BigInteger factorial(int n) {
+        return IntStream.rangeClosed(2, n)
+            .parallel()
+            .mapToObj(BigInteger::valueOf)
+            .reduce(BigInteger::multiply)
+            .orElse(BigInteger.ONE);
     }
+
 }
 
