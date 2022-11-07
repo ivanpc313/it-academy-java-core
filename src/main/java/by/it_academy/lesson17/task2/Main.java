@@ -23,11 +23,11 @@ public class Main {
 
     }
 
-    private static List<LocalDate> allFridays13(String startYear, String endYear) {
+    private static List<LocalDate> allFridays13(String startYear, String endYearString) {
         LocalDate start = LocalDate.of(Integer.parseInt(startYear), 1, 1);
-        int a = Integer.parseInt(String.valueOf(endYear));
+        int endYear = Integer.parseInt(endYearString);
 
-        return Stream.iterate(start, n -> n.getYear() == a, current -> current.plusDays(1))
+        return Stream.iterate(start, n -> n.getYear() != endYear, current -> current.plusDays(1))
                 .filter(i -> i.getDayOfWeek() == FRIDAY)
                 .filter(i -> i.getDayOfMonth() == 13)
                 .collect(Collectors.toList());
